@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>drawer</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- lib -->
+<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="lib/spine.js"></script>
+<script type="text/javascript" src="lib/spine.model.local.js"></script>
+<script type="text/javascript" src="lib/ajaxfileupload.js"></script>
+
+<!-- module -->
+<script type="text/javascript" src="APP/module/canvasMD.js"></script>
+<script type="text/javascript" src="APP/module/drawerMD.js"></script>
+<script type="text/javascript" src="APP/module/tooBarMD.js"></script>
+<script type="text/javascript" src="APP/module/shapesMD.js"></script>
+
+<!-- tools -->
+<script type="text/javascript" src="APP/tools/line.js"></script>
+<script type="text/javascript" src="APP/tools/circle.js"></script>
+<script type="text/javascript" src="APP/tools/brush.js"></script>
+<script type="text/javascript" src="APP/tools/eraser.js"></script>
+<script type="text/javascript" src="APP/tools/rectangle.js"></script>
+<script type="text/javascript" src="APP/tools/colorPallet.js"></script>
+<script type="text/javascript" src="APP/tools/rectangularTriangle.js"></script>
+<script type="text/javascript" src="APP/tools/equilateralTriangle.js"></script>
+<script type="text/javascript" src="APP/tools/imageUploader.js"></script>
+<script type="text/javascript" src="APP/tools/imageSaver.js"></script>
+<script type="text/javascript" src="APP/tools/imageProcessor.js"></script>
+
+
+<!-- controller -->
+<script type="text/javascript" src="APP/controller/canvasCTR.js"></script>
+<script type="text/javascript" src="APP/controller/shapesCTR.js"></script>
+<script type="text/javascript" src="APP/controller/toolBarCTR.js"></script>
+
+
+<!-- App -->
+<script type="text/javascript" src="application.js"></script>
+
+</head>
+    <body>
+        <div id="maskLayer">
+
+        </div>
+        <div id="tooBalWrapper">
+            <div id="toolBar">
+                <div id="ImagePanel">
+                    <a href="javascript:void(0);" id="imageUploader">打开</a>
+
+                    <a href="javascript:void(0);" id="imageSaver">保存</a>
+                    <!--<div id="ToolForChangeGrayResolution">-->
+                        <!--<select id="grayLevel">-->
+                            <!--<option value="">请选择</option>-->
+                            <!--<option value="4">4</option>-->
+                            <!--<option value="2">2</option>-->
+                            <!--<option value="1">1</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                </div>
+                <div id="shapes">
+                    <div class="shapes" id="rectangularTriangle">直角</div>
+                    <div class="shapes" id="circle">圆</div>
+                    <div class="shapes" id="rectangle">矩</div>
+                    <div class="shapes" id="line">线</div>
+                    <div class="shapes" id="equilateralTriangle">等边</div>
+                </div>
+                <div id="brush">刷</div>
+                <div id="eraser">橡</div>
+                <div id="colorPallet">调色板</div>
+            </div>
+        </div>
+
+        <div id="panelForColorPallet">
+            <div class="face frontColorPallet"></div>
+            <div class="face backColorPallet"></div>
+        </div>
+
+        <div id="canvasWrapper">
+            <canvas id="myCanvas" width=800 height=500></canvas>
+            <canvas id="canvasForTools" width=800 height=500></canvas>
+        </div>
+
+        <div id="formForOpen">
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" id="image" name="image" />
+                <br /><br /><br />
+                <input type="button" id="open" value="Open" />
+            </form>
+        </div>
+    </body>
+</html>
+
+<script>
+    /*(function(window){
+        var canvas = document.getElementById("myCanvas") ;
+        var ctx = canvas.getContext("2d") ;
+        var width = canvas.width ;
+        var height = canvas.height ;
+        var isMouseDown = false ;
+        var timer = null ;
+
+        ctx.fillStyle = "#ffffff" ;
+        ctx.fillRect(0, 0, canvas.width, canvas.height) ;
+
+        ctx.strokeStyle = "#000000" ;
+        ctx.fillStyle = "#000000" ;
+        ctx.lineWidth = 3 ;
+        ctx.lineCap = "round" ;
+
+        canvas.onmousedown = function(ev) {
+            ev = ev || window.event ;
+
+            isMouseDown = true ;
+            ctx.moveTo(ev.offsetX, ev.offsetY) ;
+        };
+
+        canvas.onmouseup = function() {
+            isMouseDown = false ;
+        };
+
+        canvas.onmouseout = function() {
+            isMouseDown = false ;
+        };
+
+        var drawInUserDefined = function(ev) {
+            ev = ev || window.event ;
+            var Xpos = ev.offsetx ;
+            var Ypos = ev.offsetY ;
+
+            if( isMouseDown === true ) {
+                ctx.lineTo(ev.offsetX, ev.offsetY) ;
+                ctx.stroke() ;
+            }
+        };
+
+        var drawRectangularTriangle = function() {
+              ctx.clearRect(0, 0, width, height) ;
+        };
+
+        canvas.addEventListener("mousemove",drawInUserDefined) ;
+
+        document.onselectstart = function() {
+            return false;
+        }
+    })(window);*/
+</script>
