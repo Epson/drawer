@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>drawer</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.css" />
 
 <!-- lib -->
 <script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="lib/spine.js"></script>
 <script type="text/javascript" src="lib/spine.model.local.js"></script>
-<script type="text/javascript" src="lib/ajaxfileupload.js"></script>
 
 <!-- module -->
 <script type="text/javascript" src="APP/module/canvasMD.js"></script>
@@ -48,17 +48,19 @@
         <div id="tooBalWrapper">
             <div id="toolBar">
                 <div id="ImagePanel">
-                    <a href="javascript:void(0);" id="imageUploader">打开</a>
+                    <a href="javascript:void(0);" class="button blue" id="imageUploader">打开</a>
 
-                    <a href="javascript:void(0);" id="imageSaver">保存</a>
-                    <!--<div id="ToolForChangeGrayResolution">-->
-                        <!--<select id="grayLevel">-->
-                            <!--<option value="">请选择</option>-->
-                            <!--<option value="4">4</option>-->
-                            <!--<option value="2">2</option>-->
-                            <!--<option value="1">1</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
+                    <a href="javascript:void(0);" class="button" id="imageSaver">保存</a>
+                    <div id="ToolForChangeGrayResolution">
+                        降低图片灰度值：
+                        <select id="grayLevel">
+                            <option value="">请选择</option>
+                            <option value="8">8</option>
+                            <option value="4">4</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
                 </div>
                 <div id="shapes">
                     <div class="shapes" id="rectangularTriangle">直角</div>
@@ -67,9 +69,9 @@
                     <div class="shapes" id="line">线</div>
                     <div class="shapes" id="equilateralTriangle">等边</div>
                 </div>
-                <div id="brush">刷</div>
-                <div id="eraser">橡</div>
-                <div id="colorPallet">调色板</div>
+                <div id="brush" data-icon="刷" class="button pink oval icon"></div>
+                <div id="eraser" data-icon="橡皮" class="button blue back xl glass icon"></div>
+                <div id="colorPallet" data-icon="调色板" class="button orange shield xl glossy icon">调色板</div>
             </div>
         </div>
 

@@ -6,9 +6,22 @@ jQuery(function(){
         var shapesCTR = Spine.Controller.create({
             name : "shapesCTR",
             el : $("#shapes"),
+            elements : $(".shapes"),
             module : null,
             init : function() {
                 this.module = Spine.shapesMD.create() ;
+                var that = this ;
+
+                this.elements.hover(function() {
+                    $(this).addClass("shapes_hover") ;
+                }, function() {
+                    $(this).removeClass("shapes_hover") ;
+                });
+
+                this.elements.click(function() {
+                    that.elements.removeClass("shapes_clicked") ;
+                    $(this).addClass("shapes_clicked") ;
+                });
             },
             include: function(obj){
                 this[obj.name] = obj ;

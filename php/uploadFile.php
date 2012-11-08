@@ -15,6 +15,13 @@
 			move_uploaded_file($_FILES['image']['tmp_name'],"../upload/" . $imageName);
 
 			echo $imageName ;
+
+			/*
+			$s2 = new SaeStorage();
+			$name =$_FILES['image']['name'];
+
+			echo $s2->upload('upload',$name,$_FILES['image']['tmp_name']);//把用户传到SAE的文件转存到名为test的storage
+			*/
 		}
 	}
 ?>

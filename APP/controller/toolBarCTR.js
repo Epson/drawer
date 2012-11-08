@@ -38,6 +38,14 @@ jQuery(function(){
                 toolBarCTR.imageSaver.saveImage() ;
             });
 
+            toolBarCTR.include(window.imageProcessor) ;
+            toolBarCTR.imageProcessor.el.bind("change", function() {
+                var value = $("#grayLevel").val() ;
+                toolBarCTR.imageProcessor.init() ;
+                var imageData = toolBarCTR.imageProcessor.ReduceToGrayLevelSolution(value) ;
+                toolBarCTR.imageProcessor.showImage(imageData) ;
+            });
+
             toolBarCTR.include(window.colorPallet) ;
             toolBarCTR.module.bind("showColorPallet", function(){
                 toolBarCTR.colorPallet.showColorPallet.call(toolBarCTR.colorPallet) ;

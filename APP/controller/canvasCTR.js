@@ -33,22 +33,8 @@ jQuery(function($) {
             }
         }).init() ;
 
-        canvasCTR.module.bind("init",function() {
-            var canvas = canvasCTR.el[0] ;
-            var ctx = canvas.getContext("2d") ;
-            ctx.lineWidth = this.lineWidth ;
-            ctx.lineCap = this.lineCap ;
-            ctx.strokeStyle = this.strokeStyle ;
-            ctx.fillStyle = this.fillStyle ;
-            ctx.clearRect(0, 0, this.width, this.height) ;
-
+        canvasCTR.module.bind("bindEvent",function() {
             var canvasForTools = canvasCTR.el[1] ;
-            var ctx = canvasForTools.getContext("2d") ;
-            ctx.lineWidth = this.lineWidth ;
-            ctx.lineCap = this.lineCap ;
-            ctx.strokeStyle = this.strokeStyle ;
-            ctx.fillStyle = this.fillStyle ;
-            ctx.clearRect(0, 0, this.width, this.height) ;
 
             canvasForTools.addEventListener("mousedown",function(ev) {
                 ev = ev || window.event ;
@@ -63,7 +49,25 @@ jQuery(function($) {
                 window.App.module.trigger("mouseUp") ;
             }) ;
         });
+
+        canvasCTR.module.bind("init",function() {
+            var canvas = canvasCTR.el[0] ;
+            var ctx = canvas.getContext("2d") ;
+            ctx.lineWidth = this.lineWidth ;
+            ctx.lineCap = this.lineCap ;
+            ctx.strokeStyle = this.strokeStyle ;
+            ctx.fillStyle = this.fillStyle ;
+
+            var canvasForTools = canvasCTR.el[1] ;
+            var ctx = canvasForTools.getContext("2d") ;
+            ctx.lineWidth = this.lineWidth ;
+            ctx.lineCap = this.lineCap ;
+            ctx.strokeStyle = this.strokeStyle ;
+            ctx.fillStyle = this.fillStyle ;
+        });
+
         canvasCTR.module.trigger("init") ;
+        canvasCTR.module.trigger("bindEvent") ;
 
         Export.canvasCTR = canvasCTR ;
     })(window);

@@ -60,13 +60,27 @@ jQuery(function(){
             showImage : function(fileName) {
                 var canvas = canvasCTR.el[0] ;
                 var ctx = canvas.getContext("2d") ;
+                var canvasForTools = canvasCTR.el[1] ;
 
                 var img = new Image() ;
                 img.src = "upload/" + fileName;
+                //img.src = fileName ;
                 img.onload = function() {
-                    canvas.width = img.naturalWidth,
-                    canvas.height = img.naturalHeight,
+                    canvas.width = img.naturalWidth ;
+                    canvas.height = img.naturalHeight ;
                     ctx.drawImage(img, 0, 0) ;
+                    canvasForTools.width = img.naturalWidth ;
+                    canvasForTools.height = img.naturalHeight ;
+
+                    canvas.parentNode.style.width = img.naturalWidth ;
+                    canvas.parentNode.style.height = img.naturalHeight ;
+                    canvasCTR.el.parent().css({
+                        "width": img.naturalWidth + "px",
+                        "height": img.naturalHeight + "px",
+                        "marginLeft" : -( img.naturalWidth / 2 ) + "px"
+                    }) ;
+
+                    canvasCTR.module.trigger("init") ;
                 };
             }
         } ;
