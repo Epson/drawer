@@ -15,8 +15,13 @@ a {
 }
 
 #ImagePanel {
-    float: left;
-    margin-left: 20px;
+    width: 100%;
+    position: absolute;
+    height: 180px;
+    top: -180px;
+    background: -webkit-linear-gradient(left top,#cc0099, #cc0088);
+    background: -moz-linear-gradient(left top,#cc0099, #cc0088);
+    z-index: 8888;
 }
 
 #ImagePanel a {
@@ -25,13 +30,14 @@ a {
     display: inline-block;
     font-size: 13pt;
     text-align: center;
+    margin-left: 20px;
 }
 
 #maskLayer {
     width: 100% ;
     height: 100% ;
     position: fixed;
-    z-index : 3000 ;
+    z-index : 9999 ;
     background-color: #a9a9a9;
     opacity: 0.5;
     display: none;
@@ -56,6 +62,7 @@ a {
     height: 500px ;
     left: 50% ;
     margin-left: -400px;
+    top: 130px;
 }
 
 #canvasForTools {
@@ -78,13 +85,11 @@ a {
 
 #toolBar {
     position: absolute;
-    top: -180px;
-    height: 170px;
-    padding-top: 30px;
+    /*top: -180px;*/
+    height: 100px;
     width: 100%;
-    background: -webkit-linear-gradient(#ff9933, #ff8800);
-    background: -moz-linear-gradient(#ff9933, #ff8800);
     z-index: 9;
+    margin-top: 10px;
 }
 
 #shapes {
@@ -116,68 +121,60 @@ a {
 #brush {
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
     float: left;
+    margin-top: 10px;
 }
 
 #eraser {
-    width: 50px;
-    height: 50px;
-    margin-left: 20px;
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
     float: left;
-    font-size: 15pt;
-}
-
-#colorPallet {
-    width: 80px;
-    height: 80px;
-    margin-right: 300px;
-    float: right;
-    font-size: 15pt;
+    font-size: 10pt;
+    padding-top: 20px;
     text-align: center;
 }
 
-#panelForColorPallet {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    z-index: 10;
-    border: 10px gray solid;
-    top: 200px;
+#imageProcessor {
+    width: 80px;
+    height: 30px;
+    font-size: 12pt;
+    text-align: center;
+    margin-left: 30px;
+    margin-top: 10px;
 }
 
-.face {
+#slideUpImagePanel {
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     position: absolute;
-    -moz-transition: all 0.5s ;
-    -moz-backface-visibility: hidden ;
-    -webkit-transition: all 0.5s ;
-    -webkit-backface-visibility: hidden ;
+    bottom: 0px;
+    height: 30px;
+    background: #bb2288;
 }
 
-.frontColorPallet {
-    -webkit-transform: rotate3d(0, 1, 0, -180deg) ;
-    -moz-transform: rotate3d(0, 1, 0, -180deg) ;
-    background-color: #0000ff;
-    z-index: 10;
+#slideUpImagePanel img {
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
 }
 
-.backColorPallet {
-    background: url("../images/colorPalletBack.jpg") ;
-    z-index: 10;
+#colorPallet {
+    width: 50px;
+    height: 50px;
+    font-size: 10pt;
+    text-align: center;
+    margin-left: 30px;
 }
 
-.colorPallet-flipped .backColorPallet {
-    -webkit-transform: rotate3d(0,1,0,180deg) ;
-    -moz-transform: rotate3d(0,1,0,180deg) ;
+#ToolForChangeGrayResolution, #ToolForConvolution {
+    width: 300px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 
-.colorPallet-flipped .frontColorPallet {
-    -webkit-transform: rotate3d(0,1,0,0deg) ;
-    -moz-transform: rotate3d(0,1,0,0deg) ;
-}
+
 
 

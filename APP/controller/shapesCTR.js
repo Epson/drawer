@@ -29,7 +29,6 @@ jQuery(function(){
         }).init() ;
 
         shapesCTR.module.bind("init",function() {
-
             shapesCTR.include(window.line) ;
             canvasCTR.module.bind("drawLine", shapesCTR.line.drawLine) ;
             shapesCTR.line.el.bind("click", function() {

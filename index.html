@@ -28,12 +28,12 @@
 <script type="text/javascript" src="APP/tools/equilateralTriangle.js"></script>
 <script type="text/javascript" src="APP/tools/imageUploader.js"></script>
 <script type="text/javascript" src="APP/tools/imageSaver.js"></script>
-<script type="text/javascript" src="APP/tools/imageProcessor.js"></script>
 
 
 <!-- controller -->
 <script type="text/javascript" src="APP/controller/canvasCTR.js"></script>
 <script type="text/javascript" src="APP/controller/shapesCTR.js"></script>
+<script type="text/javascript" src="APP/controller/imageProcessorCTR.js"></script>
 <script type="text/javascript" src="APP/controller/toolBarCTR.js"></script>
 
 
@@ -47,21 +47,7 @@
         </div>
         <div id="tooBalWrapper">
             <div id="toolBar">
-                <div id="ImagePanel">
-                    <a href="javascript:void(0);" class="button blue" id="imageUploader">打开</a>
-
-                    <a href="javascript:void(0);" class="button" id="imageSaver">保存</a>
-                    <div id="ToolForChangeGrayResolution">
-                        降低图片灰度值：
-                        <select id="grayLevel">
-                            <option value="">请选择</option>
-                            <option value="8">8</option>
-                            <option value="4">4</option>
-                            <option value="2">2</option>
-                            <option value="1">1</option>
-                        </select>
-                    </div>
-                </div>
+                <div id="imageProcessor" class="button pink serif skew glossy">图片操作</div>
                 <div id="shapes">
                     <div class="shapes" id="rectangularTriangle">直角</div>
                     <div class="shapes" id="circle">圆</div>
@@ -75,9 +61,34 @@
             </div>
         </div>
 
+        <div id="ImagePanel">
+            <a href="javascript:void(0);" class="button blue" id="imageUploader">打开</a>
+            <a href="javascript:void(0);" class="button" id="imageSaver">保存</a>
+            <div id="ToolForChangeGrayResolution">
+                降低图片灰度值：
+                <select id="grayLevel">
+                    <option value="">请选择要降低的灰度值</option>
+                    <option value="8">8</option>
+                    <option value="4">4</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div id="ToolForConvolution">
+                对图片进行卷积处理：
+                <select id="filter">
+                    <option value="">请选择滤波器</option>
+                    <option value="averageFilter">均值滤波器</option>
+                </select>
+            </div>
+            <div id="slideUpImagePanel">
+                <img src="images/slideUp.jpg" alt="slideUp" width=30 height=30 />
+            </div>
+            <button id="process">处理</button>
+        </div>
+
         <div id="panelForColorPallet">
-            <div class="face frontColorPallet"></div>
-            <div class="face backColorPallet"></div>
+
         </div>
 
         <div id="canvasWrapper">
