@@ -10,6 +10,7 @@
 <script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="lib/spine.js"></script>
 <script type="text/javascript" src="lib/spine.model.local.js"></script>
+<script type="text/javascript" src="lib/Algorithm.js"></script>
 
 <!-- module -->
 <script type="text/javascript" src="APP/module/canvasMD.js"></script>
@@ -76,9 +77,13 @@
             </div>
             <div id="ToolForConvolution">
                 对图片进行卷积处理：
-                <select id="filter">
+                <select id="typeOfFilter">
                     <option value="">请选择滤波器</option>
                     <option value="averageFilter">均值滤波器</option>
+                    <option value="midValueFilter">中值滤波器</option>
+                    <option value="minimalFilter">最小值滤波器</option>
+                    <option value="maximalFilter">最大值滤波器</option>
+                    <option value="laplacianFilter">拉普拉斯滤波器</option>
                 </select>
             </div>
             <div id="slideUpImagePanel">
